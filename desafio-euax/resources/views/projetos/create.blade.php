@@ -33,7 +33,7 @@
                         <label for="projetoFinal">Prazo Final do Projeto</label>
                         <input type="date" class="form-control" id="projetoFinal" name="fim">
                     </div>
-                    <button type="submit" class="btn btn-primary py-3">Cadastrar</button>
+                    <button type="submit" class="btn btn-primary my-3">Cadastrar</button>
                 </form>
 
             </div>

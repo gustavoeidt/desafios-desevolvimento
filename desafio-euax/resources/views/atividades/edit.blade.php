@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Nova Atividade') }}
+            {{ __('Edição:') }} {{$atividade->atividade}}
         </h2>
     </x-slot>
 
@@ -42,7 +42,7 @@
                         </label>
                     </div>
                     <input type="hidden" value="{{$atividade->projeto_id}}" name="projeto_id">
-                    <button type="submit" class="btn btn-primary my-3">Cadastrar</button>
+                    <button type="submit" class="btn btn-primary my-3">Atualizar</button>
                 </form>
 
             </div>
