@@ -26,11 +26,11 @@
                         <input type="text" class="form-control" id="atividadeNome" placeholder="Nome da Atividade" name="atividade">
                     </div>
                     <div class="form-group">
-                        <label for="projetoInicio">Início do Projeto</label>
+                        <label for="projetoInicio">Início da Atividade</label>
                         <input type="date" class="form-control" id="projetoInicio" name="inicio">
                     </div>
                     <div class="form-group">
-                        <label for="projetoFinal">Prazo Final do Projeto</label>
+                        <label for="projetoFinal">Prazo Final da Atividade</label>
                         <input type="date" class="form-control" id="projetoFinal" name="fim">
                     </div>
                     <input type="hidden" value="{{$id}}" name="projeto_id">

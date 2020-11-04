@@ -27,11 +27,11 @@
                         <input type="text" class="form-control" id="atividadeNome" placeholder="Nome da Atividade" name="atividade" value="{{$atividade->atividade}}">
                     </div>
                     <div class="form-group">
-                        <label for="projetoInicio">Início do Projeto</label>
+                        <label for="projetoInicio">Início da Atividade</label>
                         <input type="date" class="form-control" id="projetoInicio" name="inicio" value="{{$atividade->inicio->format('Y-m-d')}}">
                     </div>
                     <div class="form-group">
-                        <label for="projetoFinal">Prazo Final do Projeto</label>
+                        <label for="projetoFinal">Prazo Final da Atividade</label>
                         <input type="date" class="form-control" id="projetoFinal" name="fim" value="{{$atividade->fim->format('Y-m-d')}}">
                     </div>
                     <div class="form-check my-3">
