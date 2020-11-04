@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProjetoController;
+use App\Http\Controllers\AtividadeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,4 +23,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+// Rotas do projeto
 Route::resource('projetos', ProjetoController::class);
+Route::resource('atividades', AtividadeController::class);
+Route::get('atividades/create/{id}', [AtividadeController::class, 'create']);

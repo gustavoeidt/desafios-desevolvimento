@@ -5,21 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Projeto extends Model
+class Atividade extends Model
 {
-    use HasFactory;
-
     protected $dates = ['inicio', 'fim'];
 
+    use HasFactory;
+
     protected $fillable = [
-        'projeto',
+        'atividade',
         'inicio',
         'fim',
-        'user_id'
+        'finalizada',
+        'projeto_id'
     ];
 
-    public function atividades()
+    public function projeto()
     {
-        return $this->hasMany('App\Models\Atividade');
+        return $this->belongsTo('App\Models\Projeto');
     }
 }

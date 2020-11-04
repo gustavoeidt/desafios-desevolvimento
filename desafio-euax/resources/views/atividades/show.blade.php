@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Projetos') }}
+            {{ __('Atividades:') }} {{$projeto->projeto}}
         </h2>
     </x-slot>
 
@@ -19,6 +19,7 @@
                     </div>
                 @endif
 
+                <a href="/atividades/create/{{$projeto->id}}"><button class="btn btn-primary mb-3" type="submit">+ Adicionar Atividade</button></a>
                 <table class="table table-striped">
                     <thead class="thead-dark">
                         <tr>
@@ -26,21 +27,21 @@
                             <th scope="col">Nome do Projeto</th>
                             <th scope="col">Data de Início</th>
                             <th scope="col">Data de Fim</th>
-                            <th scope="col">Tarefas</th>
+                            <th scope="col"></th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Listagem de Projetos -->
-                        @foreach ($projetos as $projeto)
+                        <!-- Listagem de Atividades -->
+                        @foreach ($projeto->atividades as $atividade)
                             <tr>
-                                <th scope="row">{{ $projeto->id }}</th>
-                                <td><a href="/projetos/{{$projeto->id}}/edit">{{ $projeto->projeto }}</a></td>
-                                <td>{{ $projeto->inicio->format('d/m/Y') }}</td>
-                                <td>{{ $projeto->fim->format('d/m/Y') }}</td>
-                                <td><a href="/atividades/{{$projeto->id}}">Gerenciar Tarefas</a></td>
+                                <th scope="row">{{ $atividade->id }}</th>
+                                <td><a href="/atividades/{{$atividade->id}}/edit">{{ $atividade->atividade }}</a></td>
+                                <td>{{ $atividade->inicio->format('d/m/Y') }}</td>
+                                <td>{{ $atividade->fim->format('d/m/Y') }}</td>
+                                <td></td>
                                 <td>
-                                    <form action="/projetos/{{$projeto->id}}" method="POST" >
+                                    <form action="/atividades/{{$atividade->id}}" method="POST" >
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger" type="submit">Apagar</button>
