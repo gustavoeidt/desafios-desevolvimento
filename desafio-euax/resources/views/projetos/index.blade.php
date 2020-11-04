@@ -27,6 +27,7 @@
                             <th scope="col">Data de Início</th>
                             <th scope="col">Data de Fim</th>
                             <th scope="col">Tarefas</th>
+                            <th scope="col">Andamento</th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
@@ -35,12 +36,19 @@
                         @foreach ($projetos as $projeto)
                             <tr>
                                 <th scope="row">{{ $projeto->id }}</th>
-                                <td><a href="/projetos/{{$projeto->id}}/edit">{{ $projeto->projeto }}</a></td>
+                                <td><a href="/projetos/{{ $projeto->id }}/edit">{{ $projeto->projeto }}</a></td>
                                 <td>{{ $projeto->inicio->format('d/m/Y') }}</td>
                                 <td>{{ $projeto->fim->format('d/m/Y') }}</td>
-                                <td><a href="/atividades/{{$projeto->id}}">Gerenciar Tarefas</a></td>
+                                <td><a href="/atividades/{{ $projeto->id }}">Gerenciar Tarefas</a></td>
                                 <td>
-                                    <form action="/projetos/{{$projeto->id}}" method="POST" >
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar progress-bar-striped" role="progressbar" style="width:{{$projeto->progresso()}}%" >{{$projeto->progresso()}}%</div>
+                                    </div>
+                                    <p class="text-center {{$projeto->atrasado() ? 'text-danger' : 'text-success'}}"><strong>{{$projeto->atrasado() ? 'Haverá atraso' : 'Em dia'}}</strong></p>
+                                    
+                                </td>
+                                <td>
+                                    <form action="/projetos/{{ $projeto->id }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger" type="submit">Apagar</button>
