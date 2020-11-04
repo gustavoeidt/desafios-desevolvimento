@@ -34,6 +34,7 @@ class ProjetoController extends Controller
     public function store(Request $request)
     {
         // Validação dos campos requeridos
+        // WIP: Data de fim não pode ser menor que a data de início
         $request->validate([
             'projeto' => 'required',
             'inicio' => 'required',
@@ -66,6 +67,7 @@ class ProjetoController extends Controller
     // Atualiza os dados no banco
     public function update(Request $request, Projeto $projeto)
     {
+        // WIP: Data de fim não pode ser menor que a data de início
         $request->validate([
             'projeto' => 'required',
             'inicio' => 'required',
@@ -80,6 +82,7 @@ class ProjetoController extends Controller
 
     public function destroy(Projeto $projeto)
     {
+        // WIP: Adicionar prompt de confirmação
         $projeto->delete();
 
         return redirect()->route('projetos.index')

@@ -35,6 +35,7 @@ class AtividadeController extends Controller
     public function store(Request $request)
     {
         // Validação dos campos requeridos
+        // WIP: Data de fim não pode ser menor que a data de início
         $request->validate([
             'atividade' => 'required',
             'inicio' => 'required',
@@ -60,6 +61,7 @@ class AtividadeController extends Controller
     // Atualiza os dados no banco
     public function update(Request $request, Atividade $atividade)
     {
+        // WIP: Data de fim não pode ser menor que a data de início
         $request->validate([
             'atividade' => 'required',
             'inicio' => 'required',
@@ -75,6 +77,7 @@ class AtividadeController extends Controller
 
     public function destroy(Atividade $atividade)
     {
+        // WIP: Adicionar prompt de confirmação
         $id = $atividade->projeto->id;
         $atividade->delete();
 

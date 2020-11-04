@@ -34,7 +34,7 @@
                         <label for="projetoFinal">Prazo Final do Projeto</label>
                         <input type="date" class="form-control" id="projetoFinal" name="fim" value="{{$projeto->fim->format('Y-m-d')}}">
                     </div>
-                    <button type="submit" class="btn btn-primary py-3">Atualizar</button>
+                    <button type="submit" class="btn btn-primary my-3">Atualizar</button>
                 </form>
 
             </div>
