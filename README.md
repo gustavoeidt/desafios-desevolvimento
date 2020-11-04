@@ -22,8 +22,6 @@ npm run dev
 
 ## Tasks
 
-esse projeto pode ter 1 ou N atividades que também precisam ser cadastradas com as datas de início e data de fim. 
-
 Após ter feito todos os cadastros precisamos saber quantos % dos projetos já temos finalizados e também se o projeto terá atrasos ou não. 
 
 Para saber a % de andamento do projeto deve ser considerado o número de atividades finalizadas e quantidade de atividades ainda sem finalizar.
