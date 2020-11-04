@@ -26,7 +26,7 @@
                             <th scope="col">Nome do Projeto</th>
                             <th scope="col">Data de Início</th>
                             <th scope="col">Data de Fim</th>
-                            <th scope="col">Tarefas</th>
+                            <th scope="col">Atividades</th>
                             <th scope="col">Andamento</th>
                             <th scope="col"></th>
                         </tr>
@@ -39,7 +39,7 @@
                                 <td><a href="/projetos/{{ $projeto->id }}/edit">{{ $projeto->projeto }}</a></td>
                                 <td>{{ $projeto->inicio->format('d/m/Y') }}</td>
                                 <td>{{ $projeto->fim->format('d/m/Y') }}</td>
-                                <td><a href="/atividades/{{ $projeto->id }}">Gerenciar Tarefas</a></td>
+                                <td><a href="/atividades/{{ $projeto->id }}">Gerenciar Atividades</a></td>
                                 <td>
                                     <div class="progress">
                                         <div class="progress-bar progress-bar progress-bar-striped" role="progressbar" style="width:{{$projeto->progresso()}}%" >{{$projeto->progresso()}}%</div>
